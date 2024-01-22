@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 class Header extends Component {
-    shouldComponentUpdate() {
-        return false
-    }
+    // shouldComponentUpdate() {
+    //     return false
+    // }
     render() {
         return (
             <>
