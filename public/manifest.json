@@ -9,14 +9,14 @@
         "purpose": "maskable"
       },
     {
-        "src": "./maskable_icon_x512.png",
+        "src": "maskable_icon_x512.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable"
     }
   ],
   "theme_color": "#ffffff",
-  "start_url": "/",
+  "start_url": "/my-robofriends/",
   "background_color": "#ffffff",
   "display": "standalone"
 }
