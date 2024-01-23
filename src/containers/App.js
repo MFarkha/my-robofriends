@@ -1,12 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import CardList from '../components/CardList';
-import SearchBox from '../components/SearchBox';
-import './App.css'
-import Scroll from '../components/Scroll'
-import ErrorBoundary from '../components/ErrorBoundary';
 import { requestRobots, setSearchField } from '../actions';
-import Header from '../components/Header';
+import MainPage from '../components/MainPage';
 
 const mapStateToProps = (state) => {
     return {
@@ -19,33 +14,14 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
-        onRequestRobots: () => dispatch(requestRobots())
+        onRequestRobots: () => dispatch(requestRobots(fetch))
     }
 }
 class App extends Component {
-    componentDidMount() {
-        this.props.onRequestRobots();
-    }
     render() {
-        const { searchField, onSearchChange, robots, isPending } = this.props;
-        if (isPending) {
-            return <h1>Loading</h1>;
-        } else {
-            const filteredRobots = robots.filter(robot => {
-                return robot.name.toLowerCase().includes(searchField.toLowerCase());
-            });
-            return (
-            <div className='tc'>
-                <Header/>
-                <SearchBox searchChange={onSearchChange}/>
-                <Scroll>
-                    <ErrorBoundary>
-                        <CardList robots={filteredRobots}/>
-                    </ErrorBoundary>
-                </Scroll>
-            </div>
-            );
-        }
+        return (
+            <MainPage { ...this.props } />
+        );
     }
 }
 
