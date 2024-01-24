@@ -7,7 +7,7 @@ import {
 
 import configureStore from 'redux-mock-store';
 import { thunk } from 'redux-thunk';
-import * as actions from './actions';
+import * as actions from './actions.js';
 
 const middlewares = [thunk]; // add your middlewares like `redux-thunk`
 const mockStore = configureStore(middlewares);

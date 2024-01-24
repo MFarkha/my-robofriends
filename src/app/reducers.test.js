@@ -5,7 +5,7 @@ import {
     REQUEST_ROBOTS_PENDING
 } from './constants.js';
 
-import * as reducers from './reducers';
+import * as reducers from './reducers.js';
 
 describe('searchRobots', () => {
     const initialStateSearch = {

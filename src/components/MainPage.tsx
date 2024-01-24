@@ -1,23 +1,38 @@
-import { Component } from 'react';
+import { Component, ChangeEventHandler } from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
 import './MainPage.css'
 import Scroll from './Scroll'
 import ErrorBoundary from './ErrorBoundary';
 import Header from './Header';
+import { IAppState, IRobot } from '../app/store';
 
-class MainPage extends Component {
+type IMainPagePropsFunction = () => void;
+
+interface IMainPageProps extends IAppState {
+    onRequestRobots: IMainPagePropsFunction,
+    onSearchChange: ChangeEventHandler<HTMLInputElement>,
+};
+interface IMainPageState {
+    error: string
+};
+
+class MainPage extends Component<IMainPageProps, IMainPageState> {
+    state: IMainPageState = {
+        error: ''
+    }
+
     componentDidMount() {
         this.props.onRequestRobots();
     }
     filterRobots = () => {
         const { robots, searchField } = this.props;
         try {
-            return robots.filter(robot => {
-                return robot.name.toLowerCase().includes(searchField.toLowerCase());
+            return (robots as Array<IRobot>).filter(robot => {
+                return robot.name.toLowerCase().includes((searchField as string).toLowerCase());
             });
         } catch(err) {
-            this.setState({error: err});
+            this.setState( {error: err as string} );
             return [];
         }
     }

@@ -4,17 +4,20 @@ import {
     REQUEST_ROBOTS_SUCCESS,
     REQUEST_ROBOTS_PENDING,
     ROBOTS_API_URL
-} from './constants.js';
+} from './constants';
 
-export const setSearchField = (text) => {
+import { AppDispatch } from './store';
+
+export const setSearchField = (text: string) => {
     return {
         type: CHANGE_SEARCH_FIELD,
         payload: text
     }
 };
+type AppFetchFunc = typeof fetch;
 
-export function requestRobots(fetch_func) {
-    return (dispatch) => {
+export function requestRobots(fetch_func: AppFetchFunc) {
+    return (dispatch: AppDispatch) => {
         dispatch( { type: REQUEST_ROBOTS_PENDING } );
         return fetch_func(ROBOTS_API_URL)
             .then(response => {
@@ -27,7 +30,6 @@ export function requestRobots(fetch_func) {
             .then(data => {
                 return dispatch({ type: REQUEST_ROBOTS_SUCCESS, payload: data })
             })
-
             .catch(err => dispatch({ type: REQUEST_ROBOTS_FAILED, payload: err }));
     }
 }

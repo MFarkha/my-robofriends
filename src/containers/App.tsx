@@ -1,9 +1,12 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { requestRobots, setSearchField } from '../actions';
+import { requestRobots, setSearchField } from '../app/actions';
 import MainPage from '../components/MainPage';
+import { RootState, AppDispatch, IAppState } from '../app/store';
 
-const mapStateToProps = (state) => {
+type AppProps = typeof MainPage.prototype.props;
+
+const mapStateToProps = (state: RootState) => {
     return {
         searchField: state.searchRobots.searchField,
         robots: state.requestRobots.robots,
@@ -11,13 +14,13 @@ const mapStateToProps = (state) => {
         error: state.requestRobots.error,
     }
 }
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: AppDispatch) => {
     return {
-        onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+        onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => dispatch(setSearchField(event.currentTarget.value)),
         onRequestRobots: () => dispatch(requestRobots(fetch))
     }
 }
-class App extends Component {
+class App extends Component<AppProps, IAppState> {
     render() {
         return (
             <MainPage { ...this.props } />
