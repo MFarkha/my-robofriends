@@ -5,12 +5,11 @@ import './MainPage.css'
 import Scroll from './Scroll'
 import ErrorBoundary from './ErrorBoundary';
 import Header from './Header';
-import { IAppState, IRobot } from '../app/store';
+import { AppState, IRobot } from '../app/store';
 
-type IMainPagePropsFunction = () => void;
 
-interface IMainPageProps extends IAppState {
-    onRequestRobots: IMainPagePropsFunction,
+interface IMainPageProps extends AppState {
+    onRequestRobots: () => void,
     onSearchChange: ChangeEventHandler<HTMLInputElement>,
 };
 interface IMainPageState {

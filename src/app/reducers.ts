@@ -5,18 +5,14 @@ import {
     REQUEST_ROBOTS_PENDING
 } from './constants';
 
-import { IAppState, IRobot } from './store'; 
+import { AppState, IRobot, AppActionData } from './store'; 
 
-type AppAction = {
-    type?: string,
-    payload?: string
-};
 
 const initialStateSearch = {
     searchField: ''
 };
 
-export const searchRobots = (state: IAppState = initialStateSearch, action:AppAction = {}) => {
+export const searchRobots = (state: AppState = initialStateSearch, action: AppActionData = {}) => {
     switch (action.type) {
         case CHANGE_SEARCH_FIELD:
             return Object.assign({}, state, { searchField: action.payload });
@@ -30,7 +26,7 @@ const initialStateRequest = {
     robots: [] as Array<IRobot>,
     error: ''
 };
-export const requestRobots = (state: IAppState = initialStateRequest, action: AppAction = {}) => {
+export const requestRobots = (state: AppState = initialStateRequest, action: AppActionData = {}) => {
     switch (action.type) {
         case REQUEST_ROBOTS_PENDING:
             return Object.assign({}, state, { isPending: true });

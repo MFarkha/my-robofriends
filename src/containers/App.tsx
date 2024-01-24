@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { requestRobots, setSearchField } from '../app/actions';
 import MainPage from '../components/MainPage';
-import { RootState, AppDispatch, IAppState } from '../app/store';
+import { RootState, AppDispatch, AppState } from '../app/store';
 
 type AppProps = typeof MainPage.prototype.props;
 
@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch: AppDispatch) => {
         onRequestRobots: () => dispatch(requestRobots(fetch))
     }
 }
-class App extends Component<AppProps, IAppState> {
+class App extends Component<AppProps, AppState> {
     render() {
         return (
             <MainPage { ...this.props } />

@@ -20,12 +20,16 @@ export interface IRobot {
     email: string
 }
 
-export interface IAppState {
+export type AppState = {
     isPending?: boolean,
     searchField?: string,
     robots?: Array<IRobot>,
     error?: string
 }
+export type AppActionData = {
+    type?: string,
+    payload?: string
+};
 
 // export type AppThunk<ReturnType = void> = ThunkAction<
 //   ReturnType,
