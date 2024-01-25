@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expects to render the CardList component 1`] = `
+<div>
+  <Card
+    key="1"
+    robot={
+      Object {
+        "email": "john@example.com",
+        "id": 1,
+        "key": 10,
+        "name": "John Snow",
+      }
+    }
+  />
+  <Card
+    key="2"
+    robot={
+      Object {
+        "email": "kelly@example.com",
+        "id": 2,
+        "key": 11,
+        "name": "Kelly Gale",
+      }
+    }
+  />
+</div>
+`;

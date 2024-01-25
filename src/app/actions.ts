@@ -6,7 +6,7 @@ import {
     ROBOTS_API_URL
 } from './constants';
 
-import { AppDispatch } from './store';
+import { AppDispatch, AppActionData } from './store';
 
 export const setSearchField = (text: string) => {
     return {
@@ -28,8 +28,8 @@ export function requestRobots(fetch_func: AppFetchFunc) {
                 }
             })
             .then(data => {
-                return dispatch({ type: REQUEST_ROBOTS_SUCCESS, payload: data })
+                return dispatch({ type: REQUEST_ROBOTS_SUCCESS, payload: data as AppActionData["payload"]});
             })
-            .catch(err => dispatch({ type: REQUEST_ROBOTS_FAILED, payload: err }));
+            .catch(err => dispatch({ type: REQUEST_ROBOTS_FAILED, payload: err as AppActionData["payload"] }));
     }
 }

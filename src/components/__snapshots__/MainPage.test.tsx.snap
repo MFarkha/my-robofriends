@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`displays a \`loading..\` message when \`robots\` data are pending 1`] = `
+exports[`displays a \`loading..\` message when a \`robots data submission\` is pending 1`] = `
 <h1>
   Loading
 </h1>
@@ -11,7 +11,9 @@ exports[`expects to render the MainPage component without crashing 1`] = `
   className="tc"
 >
   <Header />
-  <SearchBox />
+  <SearchBox
+    searchChange={[MockFunction]}
+  />
   <Scroll>
     <ErrorBoundary>
       <CardList

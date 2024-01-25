@@ -1,5 +1,4 @@
 import ErrorBoundary from './ErrorBoundary';
-import React from 'react';
 import { mount } from 'enzyme';
 
 describe("ErrorBoundary", () => {

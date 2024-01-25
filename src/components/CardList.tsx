@@ -11,7 +11,7 @@ const CardList = ({ robots }: CardListProps) => {
             {
                 robots.map((robot) => {
                     return (
-                        <Card robot={robot}/>
+                        <Card robot={robot} key={robot.id}/>
                     );
                 })
             }

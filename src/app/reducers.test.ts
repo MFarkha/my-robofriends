@@ -3,16 +3,19 @@ import {
     REQUEST_ROBOTS_FAILED,
     REQUEST_ROBOTS_SUCCESS,
     REQUEST_ROBOTS_PENDING
-} from './constants.js';
+} from './constants';
 
-import * as reducers from './reducers.js';
+import * as reducers from './reducers';
 
 describe('searchRobots', () => {
     const initialStateSearch = {
         searchField: ''
     }
+    const initialAction = {
+        type: ''
+    }    
     it('returns initial state in case of undefined and empty object', () => {
-        expect(reducers.searchRobots(undefined, {})).toEqual(initialStateSearch);
+        expect(reducers.searchRobots(undefined, initialAction)).toEqual(initialStateSearch);
     });
     it('returns initial state in case of undefined and empty object 2', () => {
         expect(reducers.searchRobots()).toEqual(initialStateSearch);
@@ -37,8 +40,11 @@ describe('requestRobots', () => {
         robots: [],
         error: ''
     };
+    const initialAction = {
+        type: ''
+    }    
     it('returns initial state in case of undefined and empty object', () => {
-        expect(reducers.requestRobots(undefined, {})).toEqual(initialStateRequest);
+        expect(reducers.requestRobots(undefined, initialAction)).toEqual(initialStateRequest);
     });
 
     it('returns initial state in case of undefined and empty object 2', () => {
@@ -56,11 +62,11 @@ describe('requestRobots', () => {
     });
 
     it('handles REQUEST_ROBOTS_SUCCESS event', () => {
-        const payload = {
+        const payload = [{
             id: 1,
             name: 'John Snow',
             email: 'john@example.com'
-        }
+        }];
         const mockAction = {
             type: REQUEST_ROBOTS_SUCCESS,
             payload: payload

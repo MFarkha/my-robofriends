@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, Action } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import { searchRobots, requestRobots } from './reducers';
 
@@ -26,9 +26,8 @@ export type AppState = {
     robots?: Array<IRobot>,
     error?: string
 }
-export type AppActionData = {
-    type?: string,
-    payload?: string
+export interface AppActionData extends Action {
+    payload?: Array<IRobot> | string;
 };
 
 // export type AppThunk<ReturnType = void> = ThunkAction<

@@ -1,7 +1,8 @@
 import { IRobot } from '../app/store';
 
 type CardProps = {
-    robot: IRobot
+    robot: IRobot,
+    key: number
 };
 
 const Card = ({ robot }: CardProps) => {
