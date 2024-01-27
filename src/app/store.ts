@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 
 import searchRobotsReducer, {searchRobotsState} from '../features/searchRobots/searchRobotsSlice';
 import requestRobotsReducer, {requestRobotsState} from '../features/requestRobots/requestRobotsSlice';
@@ -9,9 +9,9 @@ export const store = configureStore({
         searchRobots: searchRobotsReducer,
         requestRobots: requestRobotsReducer
     },
-    middleware: (getDefaultMiddleware) => (
-        getDefaultMiddleware().concat(logger)
-    ),
+    // middleware: (getDefaultMiddleware) => (
+    //     getDefaultMiddleware().concat(logger)
+    // ),
 });
 export type RootState = ReturnType<typeof store.getState>;
 export const rootState = store.getState();
