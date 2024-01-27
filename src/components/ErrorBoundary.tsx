@@ -13,6 +13,11 @@ class ErrorBoundary extends Component<IErrorProps, IErrorState> {
         hasError: false
     }
 
+    static getDerivedStateFromError(error: Error) {
+        // Update state so the next render will show the fallback UI.
+        return { hasError: true };
+    }
+
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         this.setState({ hasError: true });
         // console.log("Uncaught", error, errorInfo);
@@ -20,7 +25,11 @@ class ErrorBoundary extends Component<IErrorProps, IErrorState> {
 
     render() {
         if (this.state.hasError) {
-            return <h1>Ooops. Something weird happened.</h1>
+            return (
+                <>
+                    <h1 className='f1'>Ooops. Something weird happened.</h1>
+                </>
+            )
         }
         return this.props.children
     }

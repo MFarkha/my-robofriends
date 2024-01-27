@@ -16,6 +16,6 @@ it('expects to render the CardList component', () => {
             email: "kelly@example.com",
         },
     ]
-    const wrap = shallow(<CardList robots={mockRobots}/>);
+    const wrap = shallow(<CardList error='' robots={mockRobots}/>);
     expect(wrap).toMatchSnapshot();
 })

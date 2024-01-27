@@ -1,31 +1,24 @@
-import { Component } from 'react';
-import { connect } from 'react-redux';
-import { requestRobots, setSearchField } from '../app/actions';
+// import { requestRobots, setSearchField } from '../app/actions';
 import MainPage from '../components/MainPage';
-import { RootState, AppDispatch, AppState } from '../app/store';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { selectSearchField, robotsSearched } from '../features/searchRobots/searchRobotsSlice';
+import { selectRobots, requestRobots } from '../features/requestRobots/requestRobotsSlice';
 
-type AppProps = typeof MainPage.prototype.props;
+const App = () => {
+    const searchField = useAppSelector(selectSearchField)
+    const dispatch = useAppDispatch()
 
-const mapStateToProps = (state: RootState) => {
-    return {
-        searchField: state.searchRobots.searchField,
-        robots: state.requestRobots.robots,
-        isPending: state.requestRobots.isPending,
-        error: state.requestRobots.error,
+    const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(robotsSearched(event.currentTarget.value))
     }
-}
-const mapDispatchToProps = (dispatch: AppDispatch) => {
-    return {
-        onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => dispatch(setSearchField(event.currentTarget.value)),
-        onRequestRobots: () => dispatch(requestRobots(fetch))
+    const onRequestRobots = () => {
+        dispatch(requestRobots())
     }
-}
-class App extends Component<AppProps, AppState> {
-    render() {
-        return (
-            <MainPage { ...this.props } />
-        );
-    }
+    const robotsData = useAppSelector(selectRobots)
+    const props = Object.assign({ searchField, onSearchChange, onRequestRobots }, robotsData)
+    return (
+        <MainPage { ...props } />
+    );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

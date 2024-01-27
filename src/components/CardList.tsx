@@ -2,10 +2,14 @@ import Card from './Card';
 import { IRobot } from '../app/store';
 
 type CardListProps = {
+    error: string,
     robots: Array<IRobot>
 };
 
-const CardList = ({ robots }: CardListProps) => {
+const CardList = ({ error, robots }: CardListProps) => {
+    if (error.length!==0){
+        throw new Error();
+    }
     return (
         <div>
             {

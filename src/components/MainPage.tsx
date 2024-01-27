@@ -12,41 +12,33 @@ interface IMainPageProps extends AppState {
     onRequestRobots: () => void,
     onSearchChange: ChangeEventHandler<HTMLInputElement>,
 };
-interface IMainPageState {
-    error: string
-};
 
-class MainPage extends Component<IMainPageProps, IMainPageState> {
-    state: IMainPageState = {
-        error: ''
-    }
-
+class MainPage extends Component<IMainPageProps> {
     componentDidMount() {
         this.props.onRequestRobots();
     }
     filterRobots = () => {
-        const { robots, searchField } = this.props;
-        try {
-            return (robots as Array<IRobot>).filter(robot => {
-                return robot.name.toLowerCase().includes((searchField as string).toLowerCase());
-            });
-        } catch(err) {
-            this.setState( {error: err as string} );
-            return [];
+        const { robots, searchField, error } = this.props;
+        if (error.length!==0) {
+            return []
+        } else {
+            return (robots as Array<IRobot>).filter(robot => (
+                robot.name.toLowerCase().includes((searchField as string).toLowerCase())
+            ))
         }
     }
     render() {
-        const { onSearchChange, isPending } = this.props;
+        const { onSearchChange, isPending, error } = this.props;
         if (isPending) {
             return <h1>Loading</h1>;
         } else {
             return (
             <div className='tc'>
                 <Header/>
-                <SearchBox searchChange={onSearchChange}/>
+                <SearchBox searchChange={ onSearchChange }/>
                 <Scroll>
                     <ErrorBoundary>
-                        <CardList robots={ this.filterRobots() }/>
+                        <CardList error={ error } robots={ this.filterRobots() }/>
                     </ErrorBoundary>
                 </Scroll>
             </div>
