@@ -2,7 +2,9 @@
 
 exports[`ErrorBoundary should display an ErrorMessage if wrapped component throws 1`] = `
 <ErrorBoundary>
-  <h1>
+  <h1
+    className="f1"
+  >
     Ooops. Something weird happened.
   </h1>
 </ErrorBoundary>

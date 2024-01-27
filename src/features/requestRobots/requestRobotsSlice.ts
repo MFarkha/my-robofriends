@@ -8,7 +8,7 @@ export const requestRobots = createAsyncThunk(
     async () => {
         const response = await fetch(ROBOTS_API_URL);
         if (!response.ok) {
-            throw new Error('failed to fetch data')
+            throw new Error('failed to fetch a data')
         }
         return response.json();
     }

@@ -66,19 +66,18 @@ it('filters the robots correctly with a searchField 2', () => {
     }]);
 });
 
-it('sets a props.error in case of undefined value of robots', () => {
+it('filtered robots returns empty array in case of received error props', () => {
     const mockProps = {
-        robots: undefined,
+        robots: [],
         searchField: '',
         isPending: false,
-        error: '',
+        error: 'some error',
         onRequestRobots: jest.fn(),
         onSearchChange: jest.fn()
     }
     wrapper = shallow(<MainPage {...mockProps }/>);
     mainPageInstance = wrapper.instance() as MainPage;
     expect(mainPageInstance.filterRobots()).toEqual([]);
-    expect(mainPageInstance.state.error).not.toEqual('');
 });
 
 it('displays a `loading..` message when a `robots data submission` is pending', () => {

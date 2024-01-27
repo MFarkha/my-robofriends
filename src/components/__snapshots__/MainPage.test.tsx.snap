@@ -17,6 +17,7 @@ exports[`expects to render the MainPage component without crashing 1`] = `
   <Scroll>
     <ErrorBoundary>
       <CardList
+        error=""
         robots={Array []}
       />
     </ErrorBoundary>

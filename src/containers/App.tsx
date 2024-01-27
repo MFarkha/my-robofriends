@@ -1,4 +1,3 @@
-// import { requestRobots, setSearchField } from '../app/actions';
 import MainPage from '../components/MainPage';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { selectSearchField, robotsSearched } from '../features/searchRobots/searchRobotsSlice';
