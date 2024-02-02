@@ -2,7 +2,7 @@
   "name": "my-robofriends",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://MFarkha.github.io/my-robofriends",
+  "homepage": "https://my-robofriends.pages.dev/",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@reduxjs/toolkit": "^2.0.1",
