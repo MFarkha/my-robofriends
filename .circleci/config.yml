@@ -19,6 +19,9 @@ jobs:
       - run:
           name: Run tests
           command: npm run test
+      - run:
+          name: Create the ~/test-results directory if it doesn't exist
+          command: mkdir -p ~/test-results
       - store_test_results:
           path: ./test-results/
   build-node:
