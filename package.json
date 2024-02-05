@@ -85,6 +85,6 @@
     "redux-mock-store": "^1.5.4"
   },
   "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
+    "*.{tsx,ts,js,css,md}": "prettier --write"
   }
 }
