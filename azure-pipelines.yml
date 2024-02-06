@@ -1,5 +1,5 @@
 trigger:
-- main
+- AzureDevOps
 
 pool:
   vmImage: 'ubuntu-latest'
