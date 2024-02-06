@@ -1,26 +1,27 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../../app/store';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../../app/store";
 
 export type searchRobotsState = {
-    searchField?: string,
-}
+  searchField?: string;
+};
 
 const initialState: searchRobotsState = {
-    searchField: '',
-}
+  searchField: "",
+};
 
 export const searchRobotsSlice = createSlice({
-    name: 'searchRobots',
-    initialState,
-    reducers: {
-        robotsSearched(state, action: PayloadAction<string>) {
-            state.searchField = action.payload
-        }
-    }
+  name: "searchRobots",
+  initialState,
+  reducers: {
+    robotsSearched(state, action: PayloadAction<string>) {
+      state.searchField = action.payload;
+    },
+  },
 });
 
-export const { robotsSearched } = searchRobotsSlice.actions
+export const { robotsSearched } = searchRobotsSlice.actions;
 
-export const selectSearchField = (state: RootState) => state.searchRobots.searchField
+export const selectSearchField = (state: RootState) =>
+  state.searchRobots.searchField;
 
-export default searchRobotsSlice.reducer
+export default searchRobotsSlice.reducer;

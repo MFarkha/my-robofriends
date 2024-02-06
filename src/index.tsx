@@ -1,20 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import { store } from './app/store';
-import './index.css';
-import App from './containers/App';
-import reportWebVitals from './reportWebVitals';
-import 'tachyons';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import { store } from "./app/store";
+import "./index.css";
+import App from "./containers/App";
+import reportWebVitals from "./reportWebVitals";
+import "tachyons";
 
-const root = ReactDOM.createRoot(document.getElementById('root') as Element);
+const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want your app to work offline and load faster, you can change
