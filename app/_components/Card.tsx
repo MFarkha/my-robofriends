@@ -1,4 +1,4 @@
-import { IRobot } from '../app/store';
+import { IRobot } from '../page';
 
 type CardProps = {
     robot: IRobot,
