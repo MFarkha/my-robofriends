@@ -20,6 +20,9 @@
 .env.test.local
 .env.production.local
 .trunk
+.eslintrc.js
+.eslintcache
+.husky
 
 npm-debug.log*
 yarn-debug.log*
