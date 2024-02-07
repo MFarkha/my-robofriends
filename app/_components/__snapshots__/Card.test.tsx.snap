@@ -7,8 +7,13 @@ exports[`expects to render the Card component 1`] = `
   >
     <img
       alt="robots"
+      data-nimg="1"
+      decoding="async"
       height="200"
-      src="https://robohash.org/1.png?size=200x200"
+      loading="lazy"
+      src="/_next/image?url=https%3A%2F%2Frobohash.org%2F1.png%3Fsize%3D200x200&w=640&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Frobohash.org%2F1.png%3Fsize%3D200x200&w=256&q=75 1x, /_next/image?url=https%3A%2F%2Frobohash.org%2F1.png%3Fsize%3D200x200&w=640&q=75 2x"
+      style="color: transparent;"
       width="200"
     />
     <div>
