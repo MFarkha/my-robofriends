@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  images: {
-    unoptimized: true
-  },
-  basePath: "/my-robofriends",
+  // images: {
+  //   unoptimized: true
+  // },
+  // basePath: "/my-robofriends",
   // images: {
   //   remotePatterns: [
   //     {

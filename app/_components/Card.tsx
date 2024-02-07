@@ -1,6 +1,5 @@
 import React from "react";
 import { IRobot } from "../page";
-import Image from 'next/image';
 
 type CardProps = {
   robot: IRobot;
@@ -11,12 +10,12 @@ const Card = ({ robot }: CardProps) => {
   const { name, email, id } = robot;
   return (
     <div className="bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
-      <Image
+      <img
         alt="robots"
         src={`https://robohash.org/${id}.png?size=200x200`}
         width="200"
         height="200"
-      ></Image>
+      ></img>
       <div>
         <h2 className="f5">{name}</h2>
         <p>{email}</p>
