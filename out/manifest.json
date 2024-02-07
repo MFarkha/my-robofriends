@@ -1,0 +1,44 @@
+{
+  "short_name": "My Robofriends",
+  "name": "My Robofriends",
+  "icons": [
+    {
+      "src": "./android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+        "src": "maskable_icon_x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+    },
+    {
+        "src": "maskable_icon_x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+    }
+  ],
+  "description": "The app displays a list of cards with robots.",
+  "lang": "en",
+  "screenshots": [
+    {
+      "src": "./screenshot-485x932.png",
+      "type": "image/jpeg",
+      "sizes": "485x932",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "./screenshot-1024x626.png",
+      "type": "image/png",
+      "sizes": "1024x626",
+      "form_factor": "wide"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "start_url": "/my-robofriends/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "any"
+}

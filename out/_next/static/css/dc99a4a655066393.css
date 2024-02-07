@@ -1,0 +1,23 @@
+@font-face {
+  font-family: __myFont_3b2227;
+  src: url(/_next/static/media/f1f65b6c9322702f-s.p.woff) format("woff");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: __myFont_Fallback_3b2227;
+  src: local("Arial");
+  ascent-override: 80.7%;
+  descent-override: 15.13%;
+  line-gap-override: 10.34%;
+  size-adjust: 96.8%;
+}
+.__className_3b2227 {
+  font-family: __myFont_3b2227, __myFont_Fallback_3b2227;
+  font-weight: 400;
+  font-style: normal;
+}
+.__variable_3b2227 {
+  --font-robotronics: "__myFont_3b2227", "__myFont_Fallback_3b2227";
+}
