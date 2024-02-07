@@ -1,3 +1,4 @@
+import React from "react";
 import Scroll from "./Scroll";
 import { expect, test } from "vitest";
 import { render } from "@testing-library/react";

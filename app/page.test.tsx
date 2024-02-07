@@ -1,3 +1,4 @@
+import React from "react";
 import Page from "./page";
 import { expect, test } from "vitest";
 import { beforeAll, afterEach, afterAll } from "vitest";

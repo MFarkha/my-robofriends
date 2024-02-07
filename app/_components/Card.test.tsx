@@ -1,3 +1,4 @@
+import React from "react";
 import Card from "./Card";
 import { expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";

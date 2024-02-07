@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import React from "react";
 import "./tachyons.min.css";
 import localFont from "next/font/local";
 import "./globals.css";

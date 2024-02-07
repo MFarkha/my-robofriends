@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { ReactNode, Component, ErrorInfo } from "react";
 interface IErrorProps {
   children?: ReactNode;
@@ -17,7 +18,7 @@ class ErrorBoundary extends Component<IErrorProps, IErrorState> {
     hasError: false,
   };
 
-  static getDerivedStateFromError(error: Error) {
+  static getDerivedStateFromError() {
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }

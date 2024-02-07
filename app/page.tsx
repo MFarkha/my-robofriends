@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { useState, useEffect, ChangeEvent } from "react";
 import Scroll from "./_components/Scroll";
 import SearchBox from "./_components/SearchBox";

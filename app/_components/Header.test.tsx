@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "./Header";
 import { expect, test } from "vitest";
 import { render } from "@testing-library/react";

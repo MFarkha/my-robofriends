@@ -1,3 +1,4 @@
+import React from "react";
 import ErrorBoundary from "./ErrorBoundary";
 import { expect, test, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
