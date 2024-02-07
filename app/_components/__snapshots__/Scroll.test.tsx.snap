@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`expects to render the Scroll component 1`] = `
+<div>
+  <div
+    style="overflow-y: scroll; border: 5px solid black; height: 800px;"
+  />
+</div>
+`;

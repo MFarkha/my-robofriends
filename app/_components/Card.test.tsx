@@ -1,12 +1,16 @@
-import Card from './Card';
-import { shallow } from 'enzyme';
+import Card from "./Card";
+import { expect, test } from "vitest";
+import { render, screen } from "@testing-library/react";
 
-it('expects to render the Card component', () => {
-    const mockRobot = {
-        id: 1,
-        name: "John Snow",
-        email: "john@example.com"
-    }
-    const wrap = shallow(<Card key={mockRobot.id} robot={mockRobot}/>);
-    expect(wrap).toMatchSnapshot();
-})
+test("expects to render the Card component", () => {
+  const mockRobot = {
+    id: 1,
+    name: "John Snow",
+    email: "john@example.com",
+  };
+  const { container } = render(<Card key={mockRobot.id} robot={mockRobot} />);
+  expect(
+    screen.getByRole("heading", { level: 2, name: mockRobot.name }),
+  ).toBeDefined();
+  expect(container).toMatchSnapshot();
+});

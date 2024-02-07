@@ -1,38 +1,42 @@
+"use client";
+
 import { ReactNode, Component, ErrorInfo } from "react";
-
 interface IErrorProps {
-    children?: ReactNode
-};
-
+  children?: ReactNode;
+}
 interface IErrorState {
-    hasError: boolean
-};
+  hasError: boolean;
+}
 
 class ErrorBoundary extends Component<IErrorProps, IErrorState> {
-    state: IErrorState = {
-        hasError: false
-    }
+  constructor(props: IErrorProps) {
+    super(props);
+  }
 
-    static getDerivedStateFromError(error: Error) {
-        // Update state so the next render will show the fallback UI.
-        return { hasError: true };
-    }
+  state: IErrorState = {
+    hasError: false,
+  };
 
-    componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        this.setState({ hasError: true });
-        // console.log("Uncaught", error, errorInfo);
-    }
+  static getDerivedStateFromError(error: Error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
 
-    render() {
-        if (this.state.hasError) {
-            return (
-                <>
-                    <h1 className='f1'>Ooops. Something weird happened.</h1>
-                </>
-            )
-        }
-        return this.props.children
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    this.setState({ hasError: true });
+    console.log("Uncaught", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <>
+          <h1 className="f1">Ooops. Something weird happened.</h1>
+        </>
+      );
     }
+    return this.props.children;
+  }
 }
 
 export default ErrorBoundary;

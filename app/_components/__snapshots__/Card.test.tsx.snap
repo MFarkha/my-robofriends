@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`expects to render the Card component 1`] = `
+<div>
+  <div
+    class="bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5"
+  >
+    <img
+      alt="robots"
+      height="200"
+      src="https://robohash.org/1.png?size=200x200"
+      width="200"
+    />
+    <div>
+      <h2
+        class="f5"
+      >
+        John Snow
+      </h2>
+      <p>
+        john@example.com
+      </p>
+    </div>
+  </div>
+</div>
+`;
