@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`expects to render the SearchBox component 1`] = `
+<div>
+  <div
+    class="pa2"
+  >
+    <input
+      aria-label="search robots"
+      class="pa3 ba b--green bg-lightest-blue"
+      name="searchBox"
+      placeholder="search robots"
+      type="search"
+    />
+  </div>
+</div>
+`;

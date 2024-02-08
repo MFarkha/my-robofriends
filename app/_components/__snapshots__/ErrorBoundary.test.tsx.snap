@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should display an ErrorMessage if wrapped component throws an error 1`] = `
+<div>
+  <h1
+    class="f1"
+  >
+    Ooops. Something weird happened.
+  </h1>
+</div>
+`;
